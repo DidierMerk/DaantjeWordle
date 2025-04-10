@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Happy Birthday Daantje</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-pattern">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="pattern" width="60" height="60" patternUnits="userSpaceOnUse">
+                    <circle cx="30" cy="30" r="2" fill="#ffb6c1" opacity="0.5" />
+                    <circle cx="10" cy="10" r="1" fill="#ff6b93" opacity="0.3" />
+                    <circle cx="50" cy="10" r="1" fill="#ff6b93" opacity="0.3" />
+                    <circle cx="10" cy="50" r="1" fill="#ff6b93" opacity="0.3" />
+                    <circle cx="50" cy="50" r="1" fill="#ff6b93" opacity="0.3" />
+                    <path d="M0 30 L60 30" stroke="#f1c0e8" stroke-width="0.5" opacity="0.2" />
+                    <path d="M30 0 L30 60" stroke="#f1c0e8" stroke-width="0.5" opacity="0.2" />
+                </pattern>
+                
+                <!-- Gradient for decoration -->
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ff6b93" stop-opacity="0.2" />
+                    <stop offset="100%" stop-color="#ffb6c1" stop-opacity="0.2" />
+                </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#pattern)" />
+            
+            <!-- Decorative elements -->
+            <circle cx="10%" cy="20%" r="80" fill="url(#gradient1)" />
+            <circle cx="90%" cy="80%" r="120" fill="url(#gradient1)" />
+            <circle cx="30%" cy="70%" r="60" fill="url(#gradient1)" />
+            <circle cx="70%" cy="40%" r="100" fill="url(#gradient1)" />
+        </svg>
+    </div>
+    
+    <div class="landing-page" id="landing-page">
+        <div class="birthday-cake">
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+        </div>
+        <h1 class="title">Happy Birthday Daantje</h1>
+        <p class="subtitle">A special puzzle just for you</p>
+        <button class="start-button" id="start-button">
+            <span>Start Your Puzzle</span>
+            <div class="button-effect"></div>
+        </button>
+    </div>
+    
+    <div class="game-container hidden" id="game-container">
+        <h2 class="game-title">Find the Word</h2>
+        <div class="grid-container" id="grid-container">
+            <!-- Grid will be dynamically generated -->
+        </div>
+        
+        <div class="keyboard" id="keyboard">
+            <!-- Keyboard will be dynamically generated -->
+        </div>
+        
+        <div class="message" id="message"></div>
+    </div>
+    
+    <!-- Modal for win screen -->
+    <div class="modal-overlay hidden" id="win-modal">
+        <div class="modal-content">
+            <h2>Congratulations!</h2>
+            <p>You found the word!</p>
+            <button class="modal-button" id="win-close-button">Close</button>
+            <div class="celebration" id="celebration"></div>
+        </div>
+    </div>
+    
+    <!-- Modal for hint screen -->
+    <div class="modal-overlay hidden" id="hint-modal">
+        <div class="modal-content">
+            <h2>Oh no!</h2>
+            <p>You've used all your tries.</p>
+            <div class="sad-animation">
+                <div class="sad-face">
+                    <div class="sad-eye left"></div>
+                    <div class="sad-eye right"></div>
+                    <div class="sad-mouth"></div>
+                </div>
+            </div>
+            <button class="hint-button" id="hint-button">Show Hint</button>
+            <p class="hint hidden" id="hint-text">Decathlon</p>
+            <!-- Add this new button -->
+            <button class="modal-button" id="hint-close-button">Close</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
